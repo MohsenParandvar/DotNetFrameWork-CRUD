@@ -76,7 +76,7 @@ namespace crud_dnf.Controllers
             User user = await db.Users.FindAsync(id);
             db.Users.Remove(user);
             await db.SaveChangesAsync();
-            return Content("1");
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
 
         protected override void Dispose(bool disposing)
